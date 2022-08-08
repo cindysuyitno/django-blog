@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+</head>
+<body>
+
+<h1> This is the Django Book List </h1>
+{% for b in books %}
+<article class="book list">
+    <h2> Title: {{b.title}} </h2>
+    <p> Price: USD {{b.price}} </p>
+    <p> Year: {{b.year}} </p>
+    <p> Publisher: {{b.publisher}} </p>
+    <p> Author: {% for author in b.author.all %}
+        <a href="{% url 'author_detail' pk=author.pk%}">{{ author.name }}</a>
+        {% endfor %}
+    </p>
+    <br>
+</article>
+{% endfor %}
+<p style="color: orange"><b>Post a new book: </b><a href="{%url 'post_form'%}">Click here</a></p>
+
+</body>
+</html>

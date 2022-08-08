@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details</title>
+</head>
+<body>
+    <p>Title: {{book.title}}</p>
+    <p>Price: USD {{book.price}}</p>
+    <p>Year: {{book.year}}</p>
+    <p>Publisher: {{book.publisher}}</p>
+    <p>Author: {% for author in book.author.all %} <a href="{% url 'author_detail' pk=author.pk %}">{{author}}</a> {% endfor %} </p>
+    <br>
+    <p style="color:orange"><b>Back to book list: </b><a href="{% url 'book_list'%}"> Click here </a></p>
+</body>
+</html>

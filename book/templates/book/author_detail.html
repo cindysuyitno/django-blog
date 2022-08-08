@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author Details</title>
+</head>
+<body>
+<p><b style="color: orange"> Name: </b> {{author.author.name}} </p>
+<p><b style="color: blue"> Birthday: </b> {{author.birthday}} </p>
+<p><b style="color: blue"> City: </b> {{author.city}} </p>
+<p><b style="color: blue"> Telephone: </b> {{author.telp}} </p>
+<p><b style="color: blue"> E-mail: </b> {{author.email}} </p>
+<p><b style="color: blue"> Age: </b> {{author.age}} </p>
+<p><b style="color: red"> Books published: </b></p> {%for b in book%} <a href="{% url 'book_detail' pk=b.pk%}"><div>{{b.title}}</div></a> {% endfor %}
+<br>
+<p> Return to book list: <a href="{% url 'book_list' %}"> click here </a></p>
+</body>
+</html>

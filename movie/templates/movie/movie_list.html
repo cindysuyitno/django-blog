@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie List</title>
+</head>
+<body>
+    <h1> Movie List </h1>
+    {%for m in movie%}
+    <p> Movie title: {{m.title}}</p>
+    <div> Actor: {%for a in m.actor.all%}
+        <ul><li>{{a.name}}</li></ul>
+        {%endfor%}
+    </div>
+    <br>
+    {%endfor%}
+    <p> Add new movie: <a href="{%  url 'movie_form' %}"> Click here </a></p>
+</body>
+</html>
