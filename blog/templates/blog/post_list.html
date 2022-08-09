@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content%}
+<p><i> Post lists:
+    <time>published on Saturday 7/30/2022, 10:38</time>
+</i></p>
+        {%for post in posts%}
+        <article class="post">
+            <h2><a href="{% url 'post_detail' pk=post.pk %}" style="color:#ccd5ae">{{ post.title }}</a></h2>
+            <p><time>Created on: {{post.created_date}}</time></p>
+            <p><time>Published on: {{post.published_date}}</time></p>
+        </article>
+        {%endfor%}
+<br>
+{% endblock %}
