@@ -1,0 +1,20 @@
+cindy,Post 1,"First Post in Django :)
+Trial published date set on 11 am",2022-07-28 10:37:15+00:00,2022-07-28 11:00:00+00:00,Blog object (1)
+cindy,Post 2,"Let's try another one
+Published date set on now",2022-07-28 10:38:12+00:00,2022-07-28 10:38:25+00:00,Blog object (1)
+cindy,Post 3,Without published date,2022-07-28 12:25:13+00:00,,Blog object (1)
+cindy,Post 4,"Published on command window with post.publish()
+--> me = User.objects.get(username='cindy')
+--> Post.objects.create(author=me, title='Post 4', Text='...')
+--> post = Post.objects.get(title='Post 4')",2022-07-30 02:17:56+00:00,2022-07-30 03:12:41+00:00,Blog object (2)
+cindy,New title,dmfwnpgowngpwnro,2022-07-30 05:11:05+00:00,2022-07-30 05:11:06+00:00,Blog object (2)
+cindy,Sample post 2,nfpoewrfpqejr,2022-07-30 05:11:24+00:00,2022-07-30 05:11:24+00:00,
+new,Post New 1,"Trial with new superuser --> python manage.py createsuperuser
+**Import user --> from django.contrib.auth.user import User",2022-07-31 05:58:08+00:00,2022-07-31 13:58:08+00:00,
+cindy,New,Tes,2022-08-09 04:23:26.964319+00:00,2022-08-09 04:23:27.208926+00:00,
+cindy,aaa,aaa,2022-08-09 04:41:50.658712+00:00,2022-08-09 04:41:50.664695+00:00,
+cindy,aaa,aaa,2022-08-09 04:59:53.091502+00:00,2022-08-09 04:59:53.103470+00:00,
+cindy,aab,aaa,2022-08-09 05:00:01.622081+00:00,2022-08-09 05:00:01.635036+00:00,
+cindy,aabaaaa,aaa,2022-08-09 05:00:20.487300+00:00,2022-08-09 05:00:20.497272+00:00,
+cindy,aabaaaa,aaa,2022-08-09 05:00:50.857558+00:00,2022-08-09 05:00:50.861546+00:00,
+cindy,aabaaaaaaaaa,aaa,2022-08-09 05:01:21.622181+00:00,2022-08-09 05:01:21.637143+00:00,
