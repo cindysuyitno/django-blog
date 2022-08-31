@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post
-from .forms import PostForm
+from .models import *
+from .forms import *
 
 # Create your views here.
 def post_list(request):
     post = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html',{'posts':post})
+    cat = Category.objects.all()
+    return render(request, 'blog/post_list.html',{'posts':post,'cat':cat})
 
 def post_detail(request,pk):
     post = get_object_or_404(Post,pk=pk)
@@ -23,3 +24,15 @@ def post_new(request):
             return redirect('post_detail',pk=post.pk)
     else: form = PostForm()
     return render(request, 'blog/post_new.html', {'form':form})
+
+def form_new(request):
+    if request.method=="POST":
+        form =FormNew(request.POST)
+        if form.is_valid():
+            post = form.save()
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail',pk=post.pk)
+    else: form = FormNew()
+    return render(request, 'blog/form_new.html', {'form':form})
